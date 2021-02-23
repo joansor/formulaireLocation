@@ -29,6 +29,7 @@ public class ControllerPartie implements EventHandler<MouseEvent> {
         this.viewPartie = viewPartie;
         this.vh = vh;
         this.locationManager = locationManager;
+
     }
 
     @Override
@@ -44,7 +45,6 @@ public class ControllerPartie implements EventHandler<MouseEvent> {
            String itemMoto = viewPartie.getComboBoxMoto().getSelectionModel().getSelectedItem();
            String itemVoiture = viewPartie.getComboBoxVoiture().getSelectionModel().getSelectedItem();
            locationManager.location(itemVoiture,itemMoto,client);
-
 
         }else if(event.getSource().equals(viewPartie.getBtnAffiche())){
 
