@@ -2,9 +2,6 @@ package Controller;
 
 import Model.Client;
 import Model.LocationManager;
-import Model.Moto;
-import Model.Voiture;
-import View.ViewAfficher;
 import View.ViewHandler;
 import View.ViewPartie;
 
@@ -18,11 +15,8 @@ public class ControllerPartie implements EventHandler<MouseEvent> {
     private ViewPartie viewPartie;
     private ViewHandler vh;
     private LocationManager locationManager;
-    private ViewAfficher viewAfficher;
     private Client client;
     private ArrayList<Client> listClient;
-    private ArrayList<Voiture> listVoiture;
-    private ArrayList<Moto> listMoto;
 
     public ControllerPartie(ViewPartie viewPartie, ViewHandler vh,LocationManager locationManager) {
 

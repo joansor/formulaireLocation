@@ -19,7 +19,6 @@ public class LocationManager {
         listClient = new ArrayList<>();
         Client client = new Client(nom,prenom,age);
         listClient.add(client);
-        System.out.println(listClient);
     }
 
     public ArrayList<Client> getListClient() {
@@ -53,27 +52,36 @@ public class LocationManager {
 
     public void location(String itemVoiture,String itemMoto,Client client){
 
+
         for (int i = 0; i < listVoiture.size(); i++) {
 
             Vehicule voiture = listVoiture.get(i);
+            if(itemVoiture != null){
+                if(itemVoiture.equals(voiture.getMarque())){
 
-            if(itemVoiture.equals(voiture.getMarque())){
+                    voiture.setEstLouee(true);
+                    client.setVoitureLouee(voiture);
+                }
+            }else{
 
-                voiture.setEstLouee(true);
-                client.setVoitureLouee(voiture);
-
+                System.out.println("Pas de voiture louée");
             }
+
         }
         for (int i = 0; i < listMoto.size(); i++) {
 
             Vehicule moto = listMoto.get(i);
+            if(itemMoto != null) {
+                if (itemMoto.equals(moto.getMarque())) {
 
-            if (itemMoto.equals(moto.getMarque())){
+                    moto.setEstLouee(true);
+                    client.setMotoLouee(moto);
 
-                moto.setEstLouee(true);
-                client.setMotoLouee(moto);
+                }
+            }else{
+
+                System.out.println("Pas de moto louée");
             }
-
         }
         System.out.println(client);
     }
@@ -86,10 +94,4 @@ public class LocationManager {
         return listMoto;
     }
 
-    @Override
-    public String toString() {
-        return "LocationManager{" +
-                "listClient=" + listClient +
-                '}';
-    }
 }
